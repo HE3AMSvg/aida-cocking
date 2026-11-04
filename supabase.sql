@@ -209,15 +209,15 @@ declare
   v_order_id uuid;
   v_order_code text;
 begin
-  if pg_catalog.coalesce(p_website, '') <> '' then
+  if coalesce(p_website, '') <> '' then
     raise exception using errcode = '22023', message = 'Invalid request';
   end if;
 
-  v_name := pg_catalog.btrim(pg_catalog.coalesce(p_customer_name, ''));
-  v_phone := pg_catalog.regexp_replace(pg_catalog.btrim(pg_catalog.coalesce(p_phone, '')), '[[:space:]()\-]', '', 'g');
-  v_district := pg_catalog.btrim(pg_catalog.coalesce(p_district, ''));
-  v_address := pg_catalog.btrim(pg_catalog.coalesce(p_address, ''));
-  v_notes := pg_catalog.btrim(pg_catalog.coalesce(p_notes, ''));
+  v_name := pg_catalog.btrim(coalesce(p_customer_name, ''));
+  v_phone := pg_catalog.regexp_replace(pg_catalog.btrim(coalesce(p_phone, '')), '[[:space:]()\-]', '', 'g');
+  v_district := pg_catalog.btrim(coalesce(p_district, ''));
+  v_address := pg_catalog.btrim(coalesce(p_address, ''));
+  v_notes := pg_catalog.btrim(coalesce(p_notes, ''));
 
   if pg_catalog.char_length(v_name) not between 2 and 90 then
     raise exception using errcode = '22023', message = 'Please enter a valid customer name';
