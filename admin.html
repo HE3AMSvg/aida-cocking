@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#30251f">
+<title>مدیریت فروشگاه | Aida Cockings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./admin.css"><script src="./config.js"></script>
+</head>
+<body class="admin-body">
+<header class="admin-header"><a class="brand" href="./"><span class="brand-mark">A</span><span><strong>AIDA</strong><small>COCKINGS · MANAGEMENT</small></span></a><a href="./" class="back-to-store">بازگشت به فروشگاه ↗</a></header>
+<main class="admin-shell">
+<section class="login-card" id="loginPanel">
+<div class="eyebrow"><i></i> PRIVATE ACCESS</div><h1>پنل مدیریت</h1><p>برای مدیریت سفارش‌ها و محصولات فروشگاه وارد شوید.</p>
+<form id="loginForm"><label>ایمیل<input name="email" type="email" required autocomplete="username" placeholder="ایمیل مدیر"></label><label>گذرواژه<input name="password" type="password" required autocomplete="current-password" placeholder="گذرواژه"></label><button class="button button-dark full" id="loginButton" type="submit">ورود به پنل ←</button></form>
+<p class="admin-message" id="loginMessage" role="status" aria-live="polite"></p><small>دسترسی این صفحه فقط برای حسابی است که در پایگاه داده به‌عنوان مدیر تأیید شده باشد.</small>
+</section>
+
+<section class="dashboard" id="dashboard" hidden>
+<div class="dashboard-heading"><div><div class="eyebrow"><i></i> AIDA COCKINGS / ADMIN</div><h1>مدیریت فروشگاه</h1><p id="adminEmail"></p></div><button class="logout-button" type="button" id="logoutButton">خروج از حساب</button></div>
+<div class="dashboard-tabs"><button type="button" class="tab-button active" data-tab="ordersPanel">سفارش‌ها</button><button type="button" class="tab-button" data-tab="productsPanel">محصولات</button></div>
+
+<section class="admin-panel" id="ordersPanel"><div class="panel-heading"><div><h2>سفارش‌های دریافتی</h2><p>اطلاعات مشتری‌ها فقط در پنل امن مدیر نمایش داده می‌شود.</p></div><button type="button" class="refresh-button" id="refreshOrders">به‌روزرسانی ↻</button></div><div class="orders-list" id="ordersList"><p class="empty-admin">در حال دریافت سفارش‌ها…</p></div></section>
+
+<section class="admin-panel" id="productsPanel" hidden><div class="panel-heading"><div><h2>فهرست محصولات</h2><p>محصولات، عکس‌ها و قیمت‌های واقعی فروشگاه را از این بخش وارد کنید.</p></div><button type="button" class="refresh-button" id="newProductButton">＋ محصول جدید</button></div>
+<form id="productForm" class="product-form" hidden>
+<div class="form-title"><h3 id="productFormTitle">افزودن محصول</h3><button type="button" class="plain-button" id="cancelProductEdit">انصراف ×</button></div>
+<input type="hidden" name="id">
+<div class="admin-form-grid">
+<label>نام محصول<input name="name" required minlength="2" maxlength="100" placeholder="مثلاً کیک شکلاتی"></label>
+<label>دسته‌بندی<select name="category" required><option value="">انتخاب دسته‌بندی</option><option>کیک</option><option>شیرینی</option><option>دسر</option><option>باکس هدیه</option></select></label>
+<label>قیمت (تومان)<input name="price_toman" type="number" min="1" max="1000000000" step="1000" required placeholder="مثلاً ۸۹۰۰۰۰"></label>
+<label>ترتیب نمایش<input name="sort_order" type="number" min="0" max="9999" step="1" value="0"></label>
+<label class="wide">توضیحات کوتاه<textarea name="description" rows="2" maxlength="500" placeholder="توضیح مختصر محصول"></textarea></label>
+<label class="wide">عکس محصول <small>(JPG، PNG یا WEBP، حداکثر ۵ مگابایت)</small><input name="image" type="file" accept="image/jpeg,image/png,image/webp"></label>
+<label class="active-toggle"><input name="is_active" type="checkbox" checked> نمایش در فروشگاه</label>
+</div>
+<div class="image-preview" id="imagePreview" hidden></div><p class="admin-message" id="productMessage" role="status" aria-live="polite"></p>
+<button class="button button-dark" type="submit" id="saveProductButton">ذخیره محصول</button>
+</form>
+<div class="products-list" id="productsList"><p class="empty-admin">در حال دریافت محصولات…</p></div>
+</section>
+</section>
+</main>
+<footer class="admin-footer">Aida Cockings · پنل خصوصی مدیریت</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./admin.js" defer></script>
+</body></html>
