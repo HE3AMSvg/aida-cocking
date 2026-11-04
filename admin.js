@@ -80,7 +80,7 @@
         escapeHtml(item.product_name_snapshot) + " × " + new Intl.NumberFormat("fa-IR").format(item.quantity) +
         " — " + money(item.line_total_toman)
       ).join("<br>");
-      const date = new Date(order.created_at).toLocaleString("fa-IR", { dateStyle: "medium", timeStyle: "short" });
+      const date = new Date(order.created_at).toLocaleString("fa-IR", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Tehran" });
       const delivery = escapeHtml(order.delivery_date) + " · " + escapeHtml(order.delivery_time);
       return '<article class="order-card"><div class="order-top"><strong class="order-code">' + escapeHtml(order.order_code) +
         '</strong><time class="order-date">' + escapeHtml(date) + '</time></div>' +
