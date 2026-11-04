@@ -1,51 +1,129 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f1e8">
-<meta name="description" content="Aida Cockings؛ سفارش کیک، شیرینی و دسر دست‌ساز در تهران."><title>Aida Cockings | شیرینی‌های دست‌ساز</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css"><script src="./config.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta name="description" content="Aida Cockings؛ کیک، شیرینی و دسر دست‌ساز با سفارش آنلاین در تهران.">
+  <meta property="og:title" content="Aida Cockings | لحظه‌ها را شیرین‌تر کنیم">
+  <meta property="og:description" content="کیک‌ها و شیرینی‌های دست‌ساز، با جزئیات دوست‌داشتنی و طعمی که در خاطر می‌ماند.">
+  <meta property="og:type" content="website">
+  <title>Aida Cockings | شیرینی‌های دست‌ساز در تهران</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./config.js"></script>
 </head>
 <body>
-<div class="announcement">با عشق و مواد اولیه تازه، برای لحظه‌های شیرین شما 🤎 <span>ارسال سفارش در تهران</span></div>
-<header class="site-header">
-<a class="brand" href="#home"><span class="brand-mark">A</span><span><strong>AIDA</strong><small>COCKINGS · PASTRY STUDIO</small></span></a>
-<nav class="main-nav"><a href="#home">خانه</a><a href="#shop">محصولات</a><a href="#about">داستان ما</a><a href="#how">نحوه سفارش</a></nav>
-<button class="cart-trigger" id="openCart">سبد خرید <span id="cartCount">۰</span><b>＋</b></button>
-</header>
-<main>
-<section class="hero section-wrap" id="home">
-<div class="hero-copy"><div class="eyebrow"><i></i> A LITTLE BIT OF SWEETNESS</div><h1>لحظه‌ها را<br><em>شیرین‌تر</em> کنیم.</h1>
-<p>کیک‌ها و شیرینی‌های دست‌ساز، با جزئیات دوست‌داشتنی و طعمی که در خاطر می‌ماند.</p>
-<div class="hero-actions"><a class="button button-dark" href="#shop">دیدن محصولات <span>←</span></a><a class="text-link" href="#about">بیشتر درباره ما ↙</a></div>
-<div class="hero-note"><span class="note-star">✳</span><span><b>Freshly made</b><small>تازه، باکیفیت و با عشق</small></span></div></div>
-<div class="hero-art"><div class="hero-image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=85" alt="کیک خامه‌ای تزئین‌شده"></div>
-<div class="round-stamp"><span>MADE WITH</span><b>LOVE</b><span>IN TEHRAN ✳</span></div><div class="hero-caption">A SWEET MOMENT<br><span>— No. 01 / Aida's selection</span></div></div></section>
-<div class="ticker"><div>HANDMADE WITH LOVE <b>✳</b> FRESH INGREDIENTS <b>✳</b> MADE TO ORDER <b>✳</b> A LITTLE JOY EVERY DAY</div></div>
-<section class="shop section-wrap" id="shop"><div class="section-heading"><div><div class="eyebrow"><i></i> THE COLLECTION</div><h2>یک انتخاب <em>شیرین</em></h2><p>برای خودت، برای عزیزانت، برای هر بهانه‌ای.</p></div>
-<label class="search-box"><span>⌕</span><input id="productSearch" type="search" placeholder="جست‌وجوی محصول..." aria-label="جست‌وجوی محصول"></label></div>
-<div class="filters" id="filters"><button class="filter active" data-category="همه">همه محصولات <span>✳</span></button><button class="filter" data-category="کیک">کیک</button><button class="filter" data-category="شیرینی">شیرینی</button><button class="filter" data-category="دسر">دسر</button><button class="filter" data-category="باکس هدیه">باکس هدیه</button></div>
-<div class="product-grid" id="productGrid"></div><p class="sample-note">* محصولات و قیمت‌های فعلی نمونه هستند و پیش از شروع فروش واقعی باید با فهرست و قیمت‌های Aida جایگزین شوند.</p></section>
-<section class="about section-wrap" id="about"><div class="about-photo"><img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=1000&q=85" alt="شیرینی تازه در حال آماده‌سازی"><span class="photo-label">SMALL BATCH · BIG LOVE</span></div>
-<div class="about-copy"><div class="eyebrow"><i></i> A NOTE FROM AIDA</div><h2>هر شیرینی،<br>یک قصه‌ی <em>کوچک</em> دارد.</h2><p>اینجا همه‌چیز با حوصله شروع می‌شود؛ از انتخاب مواد اولیه تا آخرین جزئیات تزئین. هدف ما ساختن لحظه‌هایی است که مزه‌شان زیر دندان و خاطره‌شان در دل بماند.</p><a href="#shop" class="text-link">انتخاب شیرینی موردعلاقه‌ات ←</a></div></section>
-<section class="how section-wrap" id="how"><div class="section-heading centered"><div class="eyebrow"><i></i> HOW TO ORDER</div><h2>سفارش، به <em>سادگی</em> شیرینی</h2><p>چند قدم کوتاه تا رسیدن یک جعبه خوشمزه به دست شما.</p></div>
-<div class="steps"><article><span>01</span><div class="step-icon">♡</div><h3>انتخاب کن</h3><p>محصولات موردعلاقه‌ات را به سبد خرید اضافه کن.</p></article><article><span>02</span><div class="step-icon">✎</div><h3>جزئیات را بنویس</h3><p>اطلاعات تماس و زمان و نشانی تحویل را وارد کن.</p></article><article><span>03</span><div class="step-icon">✿</div><h3>سفارش ثبت می‌شود</h3><p>بعد از ثبت، برای هماهنگی نهایی با تو تماس می‌گیریم.</p></article></div>
-<div class="order-callout"><span>یک مناسبت خاص در پیش داری؟</span><a href="#shop">از اینجا شروع کن <b>←</b></a></div></section></main>
-<footer class="footer"><div class="footer-brand"><span class="brand-mark">A</span><div><strong>AIDA COCKINGS</strong><small>MADE WITH LOVE IN TEHRAN</small></div></div><p>لحظه‌های معمولی را به خاطره‌های شیرین تبدیل کنیم.</p>
-<div class="footer-bottom"><span>© <span id="year"></span> Aida Cockings</span><span>تهران · سفارش آنلاین</span><a href="#home">بازگشت به بالا ↑</a></div></footer>
-<div class="scrim" id="scrim"></div><aside class="cart-drawer" id="cartDrawer" aria-label="سبد خرید" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>سبد خرید</h2></div><button class="icon-button" id="closeCart" aria-label="بستن">×</button></div>
-<div class="cart-items" id="cartItems"></div><div class="cart-footer"><div class="total-row"><span>جمع سفارش</span><strong id="cartTotal">۰ تومان</strong></div><small>هزینه ارسال، در صورت وجود، هنگام هماهنگی اعلام می‌شود.</small><button id="checkoutButton" class="button button-dark full" disabled>ادامه و ثبت سفارش ←</button></div></aside>
-<div class="modal-backdrop" id="checkoutBackdrop"><section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"><div class="drawer-head"><div><span class="eyebrow">ALMOST THERE</span><h2 id="checkoutTitle">ثبت سفارش</h2></div><button class="icon-button" id="closeCheckout" aria-label="بستن">×</button></div>
-<p class="checkout-intro">اطلاعات تحویل را وارد کن تا سفارش برای هماهنگی ثبت شود. فعلاً پرداخت آنلاین نداریم.</p>
-<form id="orderForm"><div class="form-grid">
-<label>نام و نام خانوادگی<input name="name" required maxlength="90" autocomplete="name" placeholder="نام شما"></label>
-<label>شماره موبایل<input name="phone" required inputmode="tel" maxlength="15" autocomplete="tel" placeholder="09xxxxxxxxx"></label>
-<label>محله در تهران<input name="district" required maxlength="80" placeholder="مثلاً سعادت‌آباد"></label>
-<label>تاریخ تحویل<input name="delivery_date" type="date" required></label>
-<label>زمان پیشنهادی تحویل<select name="delivery_time" required><option value="">انتخاب زمان</option><option>۱۰ تا ۱۳</option><option>۱۳ تا ۱۶</option><option>۱۶ تا ۱۹</option><option>۱۹ تا ۲۱</option></select></label>
-<label class="wide">آدرس کامل<input name="address" required maxlength="500" autocomplete="street-address" placeholder="خیابان، کوچه، پلاک، واحد"></label>
-<label class="wide">توضیحات سفارش <small>(اختیاری)</small><textarea name="notes" rows="3" maxlength="700" placeholder="مثلاً متن روی کیک یا توضیح سفارش..."></textarea></label></div>
-<div class="checkout-total"><span>مبلغ محصولات</span><strong id="checkoutTotal">۰ تومان</strong></div><button type="submit" class="button button-dark full" id="submitOrder">ثبت نهایی سفارش ←</button>
-<p class="form-message" id="formMessage" role="status" aria-live="polite"></p><small class="privacy-note">اطلاعات این فرم فقط برای هماهنگی سفارش استفاده می‌شود. سفارش تا زمان تأیید فروشنده قطعی نیست.</small></form></section></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div><script src="./app.js"></script></body></html>
+  <div class="announcement">با عشق و مواد اولیه تازه، برای لحظه‌های شیرین شما 🤎 <span>سفارش در تهران</span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Aida Cockings - صفحه اصلی">
+      <span class="brand-mark">A</span>
+      <span><strong>AIDA</strong><small>COCKINGS · PASTRY STUDIO</small></span>
+    </a>
+    <nav class="main-nav" aria-label="منوی اصلی">
+      <a href="#home">خانه</a><a href="#shop">محصولات</a><a href="#about">داستان ما</a><a href="#how">نحوه سفارش</a>
+    </nav>
+    <div class="header-actions">
+      <a class="admin-link" href="./admin.html" aria-label="ورود مدیریت">مدیریت</a>
+      <button class="cart-trigger" id="openCart" type="button" aria-label="مشاهده سبد خرید">سبد خرید <span id="cartCount">۰</span><b>＋</b></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><i></i> A LITTLE BIT OF SWEETNESS</div>
+        <h1>لحظه‌ها را<br><em>شیرین‌تر</em> کنیم.</h1>
+        <p>کیک‌ها و شیرینی‌های دست‌ساز، با جزئیات دوست‌داشتنی و طعمی که در خاطر می‌ماند.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#shop">دیدن محصولات <span>←</span></a>
+          <a class="text-link" href="#about">بیشتر درباره ما <span>↙</span></a>
+        </div>
+        <div class="hero-note"><span class="note-star">✳</span><span><b>Freshly made</b><small>تازه، باکیفیت و با عشق</small></span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=85" alt="کیک خامه‌ای تزئین‌شده" fetchpriority="high"></div>
+        <div class="round-stamp"><span>MADE WITH</span><b>LOVE</b><span>IN TEHRAN ✳</span></div>
+        <div class="hero-caption">A SWEET MOMENT<br><span>— Aida's pastry studio</span></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="ویژگی‌های ما"><div>HANDMADE WITH LOVE <b>✳</b> FRESH INGREDIENTS <b>✳</b> MADE TO ORDER <b>✳</b> A LITTLE JOY EVERY DAY</div></div>
+
+    <section class="shop section-wrap" id="shop">
+      <div class="section-heading">
+        <div><div class="eyebrow"><i></i> THE COLLECTION</div><h2>یک انتخاب <em>شیرین</em></h2><p>برای خودت، برای عزیزانت، برای هر بهانه‌ای.</p></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="productSearch" type="search" placeholder="جست‌وجوی محصول..." aria-label="جست‌وجوی محصول" autocomplete="off"></label>
+      </div>
+      <div class="catalog-notice" id="catalogNotice" role="status" aria-live="polite" hidden></div>
+      <div class="filters" id="filters" aria-label="دسته‌بندی محصولات">
+        <button class="filter active" type="button" data-category="همه" aria-pressed="true">همه محصولات <span>✳</span></button>
+        <button class="filter" type="button" data-category="کیک" aria-pressed="false">کیک</button>
+        <button class="filter" type="button" data-category="شیرینی" aria-pressed="false">شیرینی</button>
+        <button class="filter" type="button" data-category="دسر" aria-pressed="false">دسر</button>
+        <button class="filter" type="button" data-category="باکس هدیه" aria-pressed="false">باکس هدیه</button>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite" aria-busy="true"></div>
+    </section>
+
+    <section class="about section-wrap" id="about">
+      <div class="about-photo"><img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=1000&q=85" alt="شیرینی تازه در حال آماده‌سازی" loading="lazy"><span class="photo-label">SMALL BATCH · BIG LOVE</span></div>
+      <div class="about-copy"><div class="eyebrow"><i></i> A NOTE FROM AIDA</div><h2>هر شیرینی،<br>یک قصه‌ی <em>کوچک</em> دارد.</h2><p>اینجا همه‌چیز با حوصله شروع می‌شود؛ از انتخاب مواد اولیه تا آخرین جزئیات تزئین. هدف ما ساختن لحظه‌هایی است که مزه‌شان زیر دندان و خاطره‌شان در دل بماند.</p><a href="#shop" class="text-link">انتخاب شیرینی موردعلاقه‌ات <span>←</span></a></div>
+    </section>
+
+    <section class="how section-wrap" id="how">
+      <div class="section-heading centered"><div class="eyebrow"><i></i> HOW TO ORDER</div><h2>سفارش، به <em>سادگی</em> شیرینی</h2><p>چند قدم کوتاه تا رسیدن یک جعبه خوشمزه به دست شما.</p></div>
+      <div class="steps">
+        <article><span>01</span><div class="step-icon">♡</div><h3>انتخاب کن</h3><p>محصولات موردعلاقه‌ات را به سبد خرید اضافه کن.</p></article>
+        <article><span>02</span><div class="step-icon">✎</div><h3>جزئیات را بنویس</h3><p>اطلاعات تماس و زمان و نشانی تحویل را وارد کن.</p></article>
+        <article><span>03</span><div class="step-icon">✿</div><h3>سفارش ثبت می‌شود</h3><p>بعد از ثبت، برای هماهنگی نهایی با تو تماس می‌گیریم.</p></article>
+      </div>
+      <div class="order-callout"><span>یک مناسبت خاص در پیش داری؟</span><a href="#shop">از اینجا شروع کن <b>←</b></a></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand"><span class="brand-mark">A</span><div><strong>AIDA COCKINGS</strong><small>MADE WITH LOVE IN TEHRAN</small></div></div>
+    <p>لحظه‌های معمولی را به خاطره‌های شیرین تبدیل کنیم.</p>
+    <div class="footer-bottom"><span>© <span id="year"></span> Aida Cockings</span><span>تهران · سفارش آنلاین</span><a href="#home">بازگشت به بالا ↑</a></div>
+  </footer>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سبد خرید" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>سبد خرید</h2></div><button class="icon-button" id="closeCart" type="button" aria-label="بستن">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="total-row"><span>جمع سفارش</span><strong id="cartTotal">۰ تومان</strong></div><small>هزینه ارسال، در صورت وجود، هنگام هماهنگی اعلام می‌شود.</small><button id="checkoutButton" class="button button-dark full" type="button" disabled>ادامه و ثبت سفارش <span>←</span></button></div>
+  </aside>
+
+  <div class="modal-backdrop" id="checkoutBackdrop">
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="drawer-head"><div><span class="eyebrow">ALMOST THERE</span><h2 id="checkoutTitle">ثبت سفارش</h2></div><button class="icon-button" id="closeCheckout" type="button" aria-label="بستن">×</button></div>
+      <p class="checkout-intro">اطلاعات تحویل را وارد کن تا سفارش برای هماهنگی ثبت شود. فعلاً پرداخت آنلاین نداریم.</p>
+      <form id="orderForm" novalidate>
+        <div class="form-grid">
+          <label>نام و نام خانوادگی<input name="name" required minlength="2" maxlength="90" autocomplete="name" placeholder="نام شما"></label>
+          <label>شماره موبایل<input name="phone" type="tel" required inputmode="tel" maxlength="18" autocomplete="tel" placeholder="۰۹xxxxxxxxx"></label>
+          <label>محله در تهران<input name="district" required maxlength="80" placeholder="مثلاً سعادت‌آباد"></label>
+          <label>تاریخ تحویل<input name="delivery_date" type="date" required></label>
+          <label>زمان پیشنهادی تحویل<select name="delivery_time" required><option value="">انتخاب زمان</option><option value="10:00-13:00">۱۰ تا ۱۳</option><option value="13:00-16:00">۱۳ تا ۱۶</option><option value="16:00-19:00">۱۶ تا ۱۹</option><option value="19:00-21:00">۱۹ تا ۲۱</option></select></label>
+          <label class="wide">آدرس کامل<input name="address" required minlength="5" maxlength="500" autocomplete="street-address" placeholder="خیابان، کوچه، پلاک، واحد"></label>
+          <label class="wide">توضیحات سفارش <small>(اختیاری)</small><textarea name="notes" rows="3" maxlength="700" placeholder="مثلاً متن روی کیک یا توضیح سفارش..."></textarea></label>
+        </div>
+        <label class="honeypot" aria-hidden="true">این فیلد را خالی بگذارید<input name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="checkout-total"><span>مبلغ محصولات</span><strong id="checkoutTotal">۰ تومان</strong></div>
+        <button type="submit" class="button button-dark full" id="submitOrder">ثبت نهایی سفارش <span>←</span></button>
+        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        <small class="privacy-note">اطلاعات این فرم فقط برای هماهنگی سفارش استفاده می‌شود. سفارش تا زمان تأیید فروشنده قطعی نیست.</small>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
