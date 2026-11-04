@@ -133,7 +133,8 @@ revoke all privileges on table private.aida_admins from public, anon, authentica
 
 grant select on table public.aida_products to anon, authenticated;
 grant insert, update on table public.aida_products to authenticated;
-grant select, update on table public.aida_orders to authenticated;
+grant select on table public.aida_orders to authenticated;
+grant update (status) on table public.aida_orders to authenticated;
 grant select on table public.aida_order_items to authenticated;
 
 drop policy if exists "Public can view active Aida products" on public.aida_products;
@@ -271,7 +272,7 @@ begin
       raise exception using errcode = '22023', message = 'Invalid product item';
     end;
 
-    if v_quantity < 1 or v_quantity > 20 then
+    if v_quantity is null or v_quantity < 1 or v_quantity > 20 then
       raise exception using errcode = '22023', message = 'Invalid product quantity';
     end if;
 
