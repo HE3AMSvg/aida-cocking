@@ -207,11 +207,11 @@
       return;
     }
 
-    state.client = window.supabase.createClient(CONFIG.supabaseUrl.trim(), CONFIG.supabaseAnonKey.trim(), {
-      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
-    });
-
     try {
+      state.client = window.supabase.createClient(CONFIG.supabaseUrl.trim(), CONFIG.supabaseAnonKey.trim(), {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+      });
+
       const { data, error } = await state.client
         .from("aida_products")
         .select("id,name,category,description,price_toman,image_url,sort_order")
