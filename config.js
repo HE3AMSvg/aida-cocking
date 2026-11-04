@@ -4,6 +4,6 @@
  * Never put a service_role key, database password, or secret API key here.
  */
 window.AIDA_CONFIG = Object.freeze({
-  supabaseUrl: "https://YOUR_PROJECT_REF.supabase.co",
-  supabaseAnonKey: "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY"
+  supabaseUrl: "https://azvtjbwptdyxzvawtmch.supabase.co",
+  supabaseAnonKey: "sb_publishable_Z9PJmVeIyISgWVWeFbzrcg_CHWGwi-9"
 });
