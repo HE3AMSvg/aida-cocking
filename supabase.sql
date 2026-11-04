@@ -240,12 +240,13 @@ begin
      or p_delivery_date > ((pg_catalog.now() at time zone 'Asia/Tehran')::date + 90) then
     raise exception using errcode = '22023', message = 'Please choose a valid delivery date';
   end if;
-  if p_delivery_time not in ('10:00-13:00','13:00-16:00','16:00-19:00','19:00-21:00') then
+  if p_delivery_time is null or p_delivery_time not in ('10:00-13:00','13:00-16:00','16:00-19:00','19:00-21:00') then
     raise exception using errcode = '22023', message = 'Please choose a valid delivery time';
   end if;
-  if p_items is null
-     or pg_catalog.jsonb_typeof(p_items) <> 'array'
-     or pg_catalog.jsonb_array_length(p_items) < 1
+  if p_items is null or pg_catalog.jsonb_typeof(p_items) <> 'array' then
+    raise exception using errcode = '22023', message = 'Invalid order items';
+  end if;
+  if pg_catalog.jsonb_array_length(p_items) < 1
      or pg_catalog.jsonb_array_length(p_items) > 20 then
     raise exception using errcode = '22023', message = 'Invalid order items';
   end if;
