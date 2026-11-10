@@ -1,46 +1,62 @@
-# Aida Cockings
+# 🍰 Aida Cockings
 
-A production-minded Persian (RTL) pastry storefront for Tehran. The project is static-hosted on GitHub Pages and uses Supabase Postgres, Auth and Storage for order intake and private owner management.
+وب‌سایت سفارش شیرینی و محصولات خانگی با رابط فارسی و راست‌چین، طراحی‌شده برای معرفی محصولات و دریافت سفارش‌های مشتریان در تهران.
 
-## Application features
-- Responsive storefront with category filters and search
-- Live product catalog stored in Supabase (no invented seed products)
-- Shopping cart saved locally in the visitor's browser
-- Order submission through a PostgreSQL function that calculates prices on the server
-- Private admin panel for order review, status updates, product editing and photo uploads
-- Row Level Security (RLS) on all application tables
-- No online payment integration
+## معرفی پروژه
 
-## Required one-time Supabase setup
+Aida Cockings یک فروشگاه آنلاین سبک است که بخش عمومی نمایش محصولات را از پنل خصوصی مدیریت جدا می‌کند. وب‌سایت با GitHub Pages میزبانی می‌شود و برای داده‌ها، احراز هویت مدیر و تصاویر از Supabase استفاده می‌کند.
 
-The Supabase project must be created in an account controlled by the business owner. Do not send passwords, database connection strings, or secret/service-role keys in chat.
+## امکانات اصلی
 
-1. Create a Supabase project at https://supabase.com/ and choose a strong database password. Keep it private.
-2. Open **SQL Editor** in that project's dashboard, create a new query, paste the complete contents of \`supabase.sql\`, and run it.
-3. In **Project Settings → API**, copy the **Project URL** and the **Publishable key** (or legacy anon key). The publishable/anon key is designed to be public; the service_role/secret key is not.
-4. In this repository, open \`config.js\`, replace \`YOUR_PROJECT_REF\` and \`YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY\` with those two public values, and commit the change. Never put a service_role key here.
-5. In **Authentication → Users**, create/invite the owner's account using the business owner's email. Set a strong unique password.
-6. In SQL Editor, replace \`OWNER_EMAIL_HERE\` in the final commented SQL statement with that exact owner email and run the statement. This adds only that account to the private admin allow-list.
-7. Open \`https://he3amsvg.github.io/aida-cocking/admin.html\`, sign in with the owner's account, and add the real menu: product name, category, description, price in toman and photo. Products marked as visible appear in the storefront.
+- نمایش محصولات و دسته‌بندی‌ها
+- جست‌وجو و فیلتر محصولات
+- سبد خرید ذخیره‌شده در مرورگر مشتری
+- ثبت سفارش از طریق تابع پایگاه داده
+- پنل خصوصی مدیر برای مشاهده و پیگیری سفارش‌ها
+- مدیریت محصولات، وضعیت سفارش و بارگذاری تصاویر
+- طراحی واکنش‌گرا و پشتیبانی از زبان فارسی و RTL
+- استفاده از Row Level Security برای محدودسازی دسترسی داده‌ها
 
-## Order and data security design
-- Public visitors can read active product listings and product photos only.
-- Public visitors cannot directly insert, select, update or delete order records.
-- The only public order write route is \`public.aida_submit_order\`. It validates the customer fields and product availability, then calculates the total from database prices and saves immutable item price/name snapshots.
-- Only owner accounts on the private allow-list can view orders, change their status, and manage products.
-- The \`private\` schema is not intended to be exposed through the Supabase Data API.
-- The browser receives only the public publishable/anon key. Never expose database passwords, service_role keys or other secrets.
+## فناوری‌ها
 
-## GitHub Pages
-The repository includes a GitHub Actions workflow at \`.github/workflows/deploy-pages.yml\`. Each push to \`main\` triggers deployment. After a successful run, the storefront is available at:
+- HTML, CSS و JavaScript
+- GitHub Pages برای میزبانی وب‌سایت
+- Supabase Database، Auth و Storage برای داده‌ها و مدیریت
+
+## راه‌اندازی Supabase
+
+1. یک پروژه Supabase در حساب تحت کنترل صاحب کسب‌وکار ایجاد کنید.
+2. فایل `supabase.sql` را در SQL Editor همان پروژه اجرا کنید.
+3. از **Project Settings → API**، مقدار Project URL و کلید عمومی Publishable (یا anon قدیمی) را بردارید.
+4. این دو مقدار را در `config.js` قرار دهید. هرگز کلید `service_role` یا Secret را در کد مرورگر قرار ندهید.
+5. حساب مدیر را در **Authentication → Users** بسازید یا دعوت کنید.
+6. دستور نهایی مجازسازی مدیر در فایل SQL را با ایمیل دقیق همان حساب تکمیل و اجرا کنید.
+7. وارد صفحه مدیریت شوید و محصولات واقعی، قیمت‌ها و تصاویر را ثبت کنید.
+
+## صفحات مهم
+
+- `index.html` — فروشگاه عمومی
+- `admin.html` — پنل مدیریت
+- `config.js` — تنظیمات عمومی اتصال Supabase
+- `supabase.sql` — ساختار پایگاه داده و سیاست‌های دسترسی
+
+## امنیت سفارش‌ها
+
+- بازدیدکنندگان فقط محصولات فعال و تصاویر عمومی آن‌ها را می‌بینند.
+- دسترسی مستقیم عمومی به جدول سفارش‌ها مجاز نیست.
+- ثبت سفارش از مسیر پایگاه داده انجام می‌شود تا قیمت نهایی از داده‌های معتبر پایگاه داده محاسبه شود.
+- مشاهده سفارش‌ها و مدیریت محصولات به حساب‌های مدیر مجاز محدود است.
+- رمز پایگاه داده، کلیدهای محرمانه و اطلاعات ورود نباید در GitHub یا چت منتشر شوند.
+
+## انتشار
+
+مخزن از GitHub Actions برای انتشار GitHub Pages استفاده می‌کند. پس از موفقیت Workflow، سایت از نشانی زیر در دسترس است:
 
 https://he3amsvg.github.io/aida-cocking/
 
-## Before accepting customer orders
-- Complete the Supabase setup above.
-- Add the real catalogue through the admin page; the preview prices are not business prices.
-- Submit a test order and confirm that it appears in the private admin panel.
-- Confirm the service area, delivery lead time, delivery fee, cancellation policy and customer contact details with the owner.
-- Publish a suitable privacy notice and a business contact method before public promotion.
+## پیش از استفاده واقعی
 
-All sample products in preview mode are explicitly non-orderable. The site must be connected to Supabase and populated with real products before launch.
+اطلاعات واقعی محصولات، قیمت‌ها، محدوده ارسال، هزینه و زمان تحویل، روش تماس و سیاست لغو سفارش باید با صاحب کسب‌وکار هماهنگ و ثبت شوند. پیش از معرفی عمومی سایت، یک سفارش آزمایشی ثبت و نمایش آن در پنل مدیر بررسی شود.
+
+> تا پیش از تکمیل تنظیمات Supabase و ورود محصولات واقعی، سایت را آماده دریافت سفارش واقعی در نظر نگیرید.
+
